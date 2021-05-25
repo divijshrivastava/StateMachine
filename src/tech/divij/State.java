@@ -17,9 +17,13 @@ public abstract class State {
    public State input(Character inputChar){
        if(inputChar == c){
            return this;
+       }else if(inputChar == otherState.c){
+           System.out.println("Switching state.");
+           return otherState;
+
+       }else{
+           throw new RuntimeException("Invalid input.");
        }
-       System.out.println("Switching state.");
-       return otherState;
-   }
+  }
    public abstract void setOtherState(State otherState);
 }

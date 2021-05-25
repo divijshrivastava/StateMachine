@@ -8,7 +8,7 @@ public class StateManagement {
 
     public static void main(String[] args) {
 
-        char[] inputs = new char[]{'a', 'b', 'b', 'a', 'a', 'b'};
+        char[] inputs = new char[]{'b', 'b', 'a', 'b', 'a', 'b'};
         State a = new AState();
         State b = new BState();
         a.setOtherState(b);
@@ -16,7 +16,7 @@ public class StateManagement {
         currentState = a;
 
         IntStream.range(0, inputs.length).mapToObj(i -> inputs[i] ).forEach( i -> {
-            System.out.println("Input is "+i);
+          //  System.out.println("Input is "+i);
             currentState = currentState.input(i);
            System.out.println(currentState.stateName());
         });
